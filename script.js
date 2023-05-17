@@ -14,6 +14,19 @@ if (navClose) {
     navMenu.classList.remove("show-sidebar");
   });
 }
+
+/* Dark / light Mode */
+const body = document.querySelector("body");
+const toggled = document.querySelector("#toggled");
+const sunIcon = document.querySelector(".toggled .bxs-sun");
+const moonIcon = document.querySelector(".toggled .bx-moon");
+
+toggled.addEventListener("change", () => {
+  body.classList.toggle("light");
+  sunIcon.className = sunIcon.className == "bx bxs-sun" ? "bx bx-sun" : "bx bxs-sun";
+  moonIcon.className = moonIcon.className == "bx bxs-moon" ? "bx bx-moon" : "bx bxs-moon";
+});
+
 /*Work Popup*/
 document.addEventListener("click", (e) => {
   if (e.target.classList.contains("work__button")) {
@@ -119,8 +132,8 @@ let mixerportfolio = mixitup(".work__container", {
 const linkWork = document.querySelectorAll(".work__item");
 
 function activeWork() {
-  linkWork.forEach((L) => l.classList.remove("active-work"));
+  linkWork.forEach(L => L.classList.remove("active-work"))
   this.classList.add("active-work");
 }
 
-linkWork.forEach((L) => l.addEventListener("click", activeWork));
+linkWork.forEach(L => L.addEventListener("click", activeWork));
