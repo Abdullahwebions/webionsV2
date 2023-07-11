@@ -73,6 +73,41 @@ input {
     font-size: var(--normal-font-size);
 }
 
+.cursor-outline {
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--skin-color);
+}
+
+.cursor-dot,
+.cursor-outline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.up {
+    position: fixed;
+    bottom: 10px;
+    left: -30px;
+    background-color: var(--skin-color);
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.up.show {
+    left: 10px;
+}
+
 body {
     background-color: var(--body-color);
     color: var(--text-color);
@@ -137,6 +172,53 @@ input {
     color: var(--skin-color);
 }
 
+/* Scroll down */
+.scroll-down {
+    height: 35px;
+    width: 20px;
+    border: 2px solid var(--skin-color);
+    position: absolute;
+    left: 50%;
+    bottom: 8px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.scroll-down::before,
+.scroll-down::after {
+    content: "";
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    border: 2px solid var(--skin-color);
+    height: 5px;
+    width: 5px;
+    transform: translate(-50%, -100%) rotate(45deg);
+    border-top: transparent;
+    border-left: transparent;
+    animation: scroll-down 1s ease-in-out infinite;
+}
+
+.scroll-down::after {
+    top: 30%;
+    animation-delay: .3s;
+}
+
+@keyframes scroll-down {
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        top: 90%;
+    }
+}
 
 /* Side Bar */
 .sidebar {
@@ -258,7 +340,7 @@ input {
 .home {
     background: url("img/home-img11.png");
     background-size: cover;
-    background-position: center center;
+    background-position: center right;
     height: 100vh;
 }
 
@@ -339,7 +421,7 @@ input {
     /* background: #ffffff; */
     background: url("img/home-img11light.png");
     background-size: cover;
-    background-position: center center;
+    background-position: center right;
     height: 100vh;
 }
 
@@ -1354,6 +1436,10 @@ ul{
         height: 70vh;
     }
 
+    .my__info {
+        display: none;
+    }
+
     /* .home__img {
         background-image: url(img/home-img12.png);
     } */
@@ -1487,6 +1573,9 @@ ul{
 
 /* For Medium Devices */
 @media screen and (max-width: 768px) {
+    .light .home {
+        background: #d1d1d1;
+    }
     .about__img {
         width: 250px;
     }
@@ -1569,6 +1658,12 @@ ul{
         row-gap: 2rem;
     }
 
+    .scroll-down {
+        height: 35px;
+        width: 20px;
+        left: 50%;
+    }
+
     .my__info {
         display: none;
     }
@@ -1639,6 +1734,17 @@ ul{
 
 /* For Small Devices */
 @media screen and (max-width: 350px) {
+    .scroll-down {
+        height: 35px;
+        width: 20px;
+        border: 2px solid var(--skin-color);
+        position: absolute;
+        left: 50%;
+        top: 440px;
+        bottom: 0;
+        border-radius: 50px;
+        cursor: pointer;
+    }
     .container {
         margin-left: var(--mb-1);
         margin-right: var(--mb-1);
