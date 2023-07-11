@@ -1,3 +1,38 @@
+/* Cursor */
+const cursorDot = document.querySelector("[data-cursor-dot]")
+const cursorOutline = document.querySelector("[data-cursor-outline]")
+
+window.addEventListener("mousemove", function (e) {
+    const posX = e.clientX;
+    const posY = e.clientY;
+
+    cursorDot.style.left = `${posX}px`;
+    cursorDot.style.top = `${posY}px`;
+
+    // cursorOutline.style.left = `${posX}px`;
+    // cursorOutline.style.top = `${posY}px`;
+
+    cursorOutline.animate({
+        left: `${posX}px`,
+        top: `${posY}px`
+    }, { duration: 500, fill: "forwards" })
+
+})
+
+/* Arrow up */
+let span = document.querySelector(".up");
+
+window.onscroll = function () {
+    this.scrollY >= 1000 ? span.classList.add("show") : span.classList.remove("show");
+};
+
+span.onclick = function () {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+    })
+}
+
 /*  Side Bar Active  */
 const navMenu = document.getElementById("sidebar"),
   navToggle = document.getElementById("nav-toggle"),
@@ -137,3 +172,5 @@ function activeWork() {
 }
 
 linkWork.forEach(L => L.addEventListener("click", activeWork));
+
+
