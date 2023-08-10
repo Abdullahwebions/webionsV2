@@ -62,6 +62,18 @@ toggled.addEventListener("change", () => {
   moonIcon.className = moonIcon.className == "bx bxs-moon" ? "bx bx-moon" : "bx bxs-moon";
 });
 
+// /* Transtion */
+// let sectionSki = document.querySelector(".tran");
+// let spanTranso = document.querySelectorAll(".skills__precentage");
+
+// window.onscroll = function () {
+//   if (window.scrollY >= sectionSki.offsetTop + 60) {
+//     spanTranso.forEach((span) => {
+//       span.style.width = span.dataset.width;
+//     });
+//   }
+// };
+
 /*Work Popup*/
 document.addEventListener("click", (e) => {
   if (e.target.classList.contains("work__button")) {
