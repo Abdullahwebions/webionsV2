@@ -413,39 +413,12 @@ input {
     display: none;
     background-color: var(--body-color);
     border: 1px solid var(--box-color);
-    border-radius: 15px;
+    border-radius: 20px;
     position: absolute;
     top: 10px;
     left: 15px;
     width: 125px;
     box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
-}
-
-.lang-menu ul li {
-    list-style: none;
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-}
-
-.lang-menu ul li a {
-    text-align: right;
-    color: #fff;
-    text-decoration: none;
-    width: 110px;
-    padding: 5px 10px;
-    display: block;
-}
-
-.selectedp {
-    background-color: var(--skin-color);
-    border-radius: 3px;
-}
-
-.lang-menu ul li:hover {
-    background-color: var(--skin-color);
-    border-radius: 4px;
-    transition: .3s;
 }
 
 .lang-menu ul li a:before {
@@ -457,6 +430,28 @@ input {
     margin-right: 10px;
     background-size: contain;
     background-repeat: no-repeat;
+}
+
+.lang-menu ul li {
+    list-style: none;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.lang-menu ul li a {
+    text-align: right;
+    text-decoration: none;
+    color: #fff;
+    width: 110px;
+    padding: 5px 10px;
+    display: block;
+}
+
+.lang-menu ul li:hover {
+    background-color: var(--skin-color);
+    border-radius: 15px;
+    transition: .4s;
 }
 
 .lang-menu:hover ul {
@@ -599,6 +594,15 @@ input {
 
 .light  h2 {
     color: #0e131b;
+}
+
+.light .lang-menu ul {
+    background-color: #c8c8c8;
+    border: 1px solid #dddddd;
+}
+
+.light .lang-menu ul li a {
+    color: black;
 }
 
 .light .about__heading {
@@ -2105,7 +2109,7 @@ ul{
     }
 
     .lang-menu .selected-lang {
-        top: -50px;
+        top: -62px;
     }
 
     .lang-menu ul {
